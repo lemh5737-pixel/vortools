@@ -12,16 +12,9 @@ export const toolsData = {
   "tools-tiktokdl": {
     "title": "TikTok Downloader",
     "deskripsi": "Tools berfungsi untuk mendownload video TikTok tanpa watermark",
-    "link": "https://halaman.zone.id/vortools-tiktok", // Contoh link eksternal lainnya
+    "link": "https://ssstik.io/id", // Contoh link eksternal lainnya
     "category": "Downloader",
     "icon": "Video"
-  },
-  "tools-text2img": {
-    "title": "Text to Image AI",
-    "deskripsi": "Generate gambar dari teks menggunakan AI",
-    "link": "https://halaman.zone.id/vortools-text2img", // Contoh link eksternal lainnya
-    "category": "AI Tools",
-    "icon": "Image"
   }
   // ... tambahkan tools lainnya dengan link eksternal
 };
