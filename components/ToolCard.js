@@ -1,7 +1,12 @@
+// components/ToolCard.js
+
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export default function ToolCard({ tool }) {
+  // Cek apakah link adalah URL eksternal
+  const isExternal = tool.link.startsWith('http://') || tool.link.startsWith('https://');
+
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
       <div className="p-6">
@@ -22,12 +27,25 @@ export default function ToolCard({ tool }) {
           {tool.deskripsi}
         </p>
         
-        <Link href={tool.link}>
-          <button className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
+        {/* Render link berdasarkan apakah eksternal atau internal */}
+        {isExternal ? (
+          <a
+            href={tool.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+          >
             <span>Open</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
-        </Link>
+          </a>
+        ) : (
+          <Link href={tool.link}>
+            <button className="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2">
+              <span>Open</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
