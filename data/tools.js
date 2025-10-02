@@ -14,7 +14,7 @@ export const toolsData = {
     "deskripsi": "Tools berfungsi untuk mendownload video TikTok tanpa watermark",
     "link": "https://ssstik.io/id", // Contoh link eksternal lainnya
     "category": "Downloader",
-    "icon": "/icon/logosmall.svg"
+    "icon": "Video"
   }
   // ... tambahkan tools lainnya dengan link eksternal
 };
