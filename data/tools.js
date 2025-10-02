@@ -1,59 +1,10 @@
 export const toolsData = {
-  "tools-tiktokdl": {
-    "title": "TikTok Downloader",
-    "deskripsi": "Tools berfungsi untuk mendownload video TikTok tanpa watermark",
-    "link": "/tools/tiktokdl",
-    "category": "Downloader",
-    "icon": "Video"
-  },
   "tools-ytdown": {
     "title": "YouTube Downloader",
     "deskripsi": "Download video atau audio dari YouTube dengan mudah",
-    "link": "/tools/ytdown",
+    "link": "/vortools-ytdl",
     "category": "Downloader",
     "icon": "Youtube"
-  },
-  "tools-text2img": {
-    "title": "Text to Image AI",
-    "deskripsi": "Generate gambar dari teks menggunakan AI",
-    "link": "/tools/text2img",
-    "category": "AI Tools",
-    "icon": "Image"
-  },
-  "tools-qrcode": {
-    "title": "QR Code Generator",
-    "deskripsi": "Buat QR Code secara instan untuk berbagai keperluan",
-    "link": "/tools/qrcode",
-    "category": "Generator",
-    "icon": "QrCode"
-  },
-  "tools-pdfmerge": {
-    "title": "PDF Merger",
-    "deskripsi": "Gabungkan beberapa file PDF menjadi satu dokumen",
-    "link": "/tools/pdfmerge",
-    "category": "Converter",
-    "icon": "FileText"
-  },
-  "tools-colorpicker": {
-    "title": "Color Picker",
-    "deskripsi": "Pilih dan konversi warna untuk kebutuhan desain",
-    "link": "/tools/colorpicker",
-    "category": "Design",
-    "icon": "Palette"
-  },
-  "tools-passwordgen": {
-    "title": "Password Generator",
-    "deskripsi": "Generate password aman dan acak dengan satu klik",
-    "link": "/tools/passwordgen",
-    "category": "Security",
-    "icon": "Key"
-  },
-  "tools-urlshort": {
-    "title": "URL Shortener",
-    "deskripsi": "Perpendek URL panjang menjadi link yang lebih singkat",
-    "link": "/tools/urlshort",
-    "category": "Utility",
-    "icon": "Link"
   }
 };
 
