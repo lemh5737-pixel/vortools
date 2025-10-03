@@ -3,6 +3,7 @@
 import axios from "axios";
 import FormData from "form-data";
 import fs from "fs";
+import formidable from "formidable";
 
 // Nonaktifkan body parser bawaan Next.js agar formidable bisa bekerja
 export const config = {
@@ -18,18 +19,21 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Gunakan Promise untuk menangani asynchronous nature dari formidable
     const data = await new Promise((resolve, reject) => {
-      const form = new formidable.IncomingForm();
+      const form = formidable({});
       form.parse(req, (err, fields, files) => {
         if (err) reject(err);
         resolve({ fields, files });
       });
     });
 
+    // Pastikan file ada
+    if (!data.files.file) {
+        return res.status(400).json({ error: "No file uploaded." });
+    }
+
     const filePath = data.files.file.filepath;
 
-    // Buat FormData baru untuk dikirim ke API removebg.one
     const form = new FormData();
     form.append("file", fs.createReadStream(filePath));
 
@@ -47,11 +51,10 @@ export default async function handler(req, res) {
       }
     });
 
-    // Kirim hasilnya kembali ke client
     res.status(200).json(apiRes.data);
 
   } catch (error) {
     console.error("❌ Gagal di API Route:", error.message);
-    res.status(500).json({ error: "Terjadi kesalahan pada server." });
+    res.status(500).json({ error: "Terjadi kesalahan pada server saat memproses gambar." });
   }
 }
