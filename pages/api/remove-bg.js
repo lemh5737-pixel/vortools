@@ -27,13 +27,20 @@ export default async function handler(req, res) {
       });
     });
 
-    // Pastikan file ada
-    if (!data.files.file) {
+    // --- PERUBAHAN PENTING DI SINI ---
+    // `formidable` v3+ mengembalikan file sebagai array.
+    // Kita ambil elemen pertama dari array tersebut.
+    const file = data.files.file[0]; 
+    
+    // Pastikan file benar-benar ada
+    if (!file) {
         return res.status(400).json({ error: "No file uploaded." });
     }
 
-    const filePath = data.files.file.filepath;
+    // Ambil filepath dari objek file yang sudah benar
+    const filePath = file.filepath;
 
+    // Buat FormData baru untuk dikirim ke API removebg.one
     const form = new FormData();
     form.append("file", fs.createReadStream(filePath));
 
@@ -51,6 +58,7 @@ export default async function handler(req, res) {
       }
     });
 
+    // Kirim hasilnya kembali ke client
     res.status(200).json(apiRes.data);
 
   } catch (error) {
