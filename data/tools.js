@@ -15,6 +15,13 @@ export const toolsData = {
     "link": "https://ssstik.io/id", // Contoh link eksternal lainnya
     "category": "Downloader",
     "icon": "Video"
+  },
+  "tools-removebg.js": {
+    "title": "Remove Background",
+    "deskripsi": "Tools berfungsi untuk Remover Background foto",
+    "link": "/tools-removebg", // Contoh link eksternal lainnya
+    "category": "Alat",
+    "icon": "Alat"
   }
   // ... tambahkan tools lainnya dengan link eksternal
 };
